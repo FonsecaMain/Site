@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-color-scheme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCHIVEs - Repositório Digital Ultra Dark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>ARCHIVEs</h1>
+                    <span class="logo-subtitle">Repositório Digital Ultra Dark</span>
+                </div>
+                <nav class="nav" id="mainNav">
+                    <button class="btn btn--neon logout-btn" id="logoutBtn" style="display: none;">
+                        <span class="btn-icon">🚪</span>
+                        Sair
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Página de Login -->
+    <section class="page active" id="loginPage">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card glass-card">
+                    <div class="auth-header">
+                        <h2>Entrar no ARCHIVEs</h2>
+                        <p>Acesse sua conta com usuário e senha</p>
+                    </div>
+                    
+                    <!-- Login tradicional apenas -->
+                    <form class="auth-form" id="loginForm">
+                        <div class="form-group">
+                            <label class="form-label" for="loginUsername">Usuário</label>
+                            <input type="text" 
+                                   class="form-control neon-input" 
+                                   id="loginUsername" 
+                                   placeholder="Digite seu nome de usuário"
+                                   required
+                                   autocomplete="username">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="loginPassword">Senha</label>
+                            <input type="password" 
+                                   class="form-control neon-input" 
+                                   id="loginPassword" 
+                                   placeholder="Digite sua senha"
+                                   required
+                                   autocomplete="current-password">
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--glow btn--full-width">
+                            <span class="btn-text">Entrar</span>
+                            <span class="btn-loading hidden">Entrando...</span>
+                        </button>
+                        <div class="auth-link">
+                            <p>Não tem uma conta? <a href="#" id="showRegisterBtn" class="neon-link">Registrar-se</a></p>
+                        </div>
+                    </form>
+                    <div class="auth-message" id="loginMessage"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Página de Registro -->
+    <section class="page" id="registerPage">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card glass-card">
+                    <div class="auth-header">
+                        <h2>Registrar no ARCHIVEs</h2>
+                        <p>Crie sua conta para acessar o repositório</p>
+                    </div>
+                    
+                    <!-- Controle de IP -->
+                    <div class="ip-control-info">
+                        <div class="info-box glass-panel">
+                            <span class="info-icon">🛡️</span>
+                            <div class="info-text">
+                                <strong>Limite de 1 conta por IP</strong>
+                                <small>Sistema de segurança ativo</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="auth-form" id="registerForm">
+                        <div class="form-group">
+                            <label class="form-label" for="registerUsername">Nome de Usuário</label>
+                            <input type="text" 
+                                   class="form-control neon-input" 
+                                   id="registerUsername" 
+                                   placeholder="Escolha um nome de usuário"
+                                   required
+                                   autocomplete="username">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="registerEmail">Email</label>
+                            <input type="email" 
+                                   class="form-control neon-input" 
+                                   id="registerEmail" 
+                                   placeholder="Digite seu email"
+                                   required
+                                   autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="registerPassword">Senha</label>
+                            <input type="password" 
+                                   class="form-control neon-input" 
+                                   id="registerPassword" 
+                                   placeholder="Crie uma senha segura"
+                                   required
+                                   autocomplete="new-password">
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--glow btn--full-width" id="registerSubmitBtn">
+                            <span class="btn-text">Registrar</span>
+                            <span class="btn-loading hidden">Registrando...</span>
+                        </button>
+                        <div class="auth-link">
+                            <p>Já tem uma conta? <a href="#" id="showLoginBtn" class="neon-link">Entrar</a></p>
+                        </div>
+                    </form>
+                    <div class="auth-message" id="registerMessage"></div>
+                    
+                    <!-- SendPulse Status -->
+                    <div class="sendpulse-status glass-panel" id="sendpulseStatus">
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span class="status-text">SendPulse: Não configurado</span>
+                        </div>
+                        <p class="status-description">Configure o SendPulse para receber emails de confirmação reais</p>
+                        <div class="status-benefits">
+                            <small>✨ 12.000 emails/mês grátis • Alta deliverability • API empresarial</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Principal -->
+    <section class="page" id="dashboardPage">
+        <div class="container">
+            <div class="dashboard-header">
+                <div class="welcome-section">
+                    <h2>Bem-vindo ao ARCHIVEs</h2>
+                    <p id="welcomeText">Olá, <span id="currentUser"></span>!</p>
+                    <div class="user-info glass-panel" id="userInfo">
+                        <div class="user-avatar" id="userAvatar"></div>
+                        <div class="user-details">
+                            <span class="user-name" id="userName"></span>
+                            <span class="user-source" id="userSource"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-section" id="adminSection" style="display: none;">
+                    <button class="btn btn--neon" id="showUploadBtn">
+                        <span class="btn-icon">📁</span>
+                        Adicionar Arquivo
+                    </button>
+                    <button class="btn btn--neon" id="showSendPulseConfigBtn">
+                        <span class="btn-icon">📧</span>
+                        Config SendPulse
+                    </button>
+                    <button class="btn btn--neon" id="showSecurityBtn">
+                        <span class="btn-icon">🛡️</span>
+                        Segurança IP
+                    </button>
+                </div>
+            </div>
+
+            <!-- Seção de Segurança IP (Admin) -->
+            <div class="config-section hidden" id="securitySection">
+                <div class="card glass-card">
+                    <div class="card__body">
+                        <h3>🛡️ Segurança e Controle de IP</h3>
+                        <p class="config-description">Sistema de controle de IP para limite de 1 conta por endereço IP.</p>
+                        
+                        <div class="security-stats">
+                            <div class="stat-card glass-panel">
+                                <div class="stat-number" id="totalIPs">0</div>
+                                <div class="stat-label">IPs Registrados</div>
+                            </div>
+                            <div class="stat-card glass-panel">
+                                <div class="stat-number" id="currentIP">-</div>
+                                <div class="stat-label">Seu IP Atual</div>
+                            </div>
+                            <div class="stat-card glass-panel">
+                                <div class="stat-number" id="totalUsers">0</div>
+                                <div class="stat-label">Total de Usuários</div>
+                            </div>
+                        </div>
+                        
+                        <div class="ip-list">
+                            <h4>Lista de IPs Registrados:</h4>
+                            <div class="ip-items" id="ipItems"></div>
+                        </div>
+                        
+                        <div class="config-actions">
+                            <button class="btn btn--neon" id="refreshSecurityBtn">
+                                🔄 Atualizar Estatísticas
+                            </button>
+                            <button class="btn btn--secondary" id="closeSecurityBtn">
+                                Fechar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Configuração SendPulse (Admin) -->
+            <div class="config-section hidden" id="sendpulseConfigSection">
+                <div class="card glass-card">
+                    <div class="card__body">
+                        <h3>📧 Configuração do SendPulse</h3>
+                        <p class="config-description">Configure o SendPulse para enviar emails reais de boas-vindas aos novos usuários com 12.000 emails/mês gratuitos.</p>
+                        
+                        <div class="sendpulse-benefits glass-panel">
+                            <h4>🚀 Vantagens do SendPulse:</h4>
+                            <ul class="benefits-list">
+                                <li><strong>12.000 emails/mês grátis</strong> vs 200 do EmailJS</li>
+                                <li><strong>API mais robusta e confiável</strong> para uso empresarial</li>
+                                <li><strong>Melhor deliverability</strong> e taxa de entrega</li>
+                                <li><strong>Templates profissionais</strong> e personalizáveis</li>
+                                <li><strong>Suporte SMTP transacional</strong> dedicado</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="config-actions">
+                            <button class="btn btn--neon" id="testSendPulseBtn">
+                                📧 Testar SendPulse
+                            </button>
+                            <button class="btn btn--secondary" id="closeSendPulseConfigBtn">
+                                Fechar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Upload (Admin) -->
+            <div class="config-section hidden" id="uploadSection">
+                <div class="card glass-card">
+                    <div class="card__body">
+                        <h3>Adicionar Novo Arquivo</h3>
+                        <form id="uploadForm">
+                            <div class="form-group">
+                                <label class="form-label" for="fileName">Nome do Arquivo</label>
+                                <input type="text" 
+                                       class="form-control neon-input" 
+                                       id="fileName" 
+                                       placeholder="Ex: Projeto Frontend.zip"
+                                       required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="fileType">Tipo</label>
+                                <select class="form-control neon-input" id="fileType" required>
+                                    <option value="">Selecione o tipo</option>
+                                    <option value="frontend">Frontend</option>
+                                    <option value="backend">Backend</option>
+                                    <option value="fullstack">Full Stack</option>
+                                    <option value="css">CSS/Styling</option>
+                                    <option value="javascript">JavaScript</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="fileSize">Tamanho</label>
+                                <input type="text" 
+                                       class="form-control neon-input" 
+                                       id="fileSize" 
+                                       placeholder="Ex: 2.5 MB"
+                                       required>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn--secondary" id="cancelUploadBtn">Cancelar</button>
+                                <button type="submit" class="btn btn--primary btn--glow">Adicionar Arquivo</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de Arquivos -->
+            <div class="files-section">
+                <div class="section-header">
+                    <h3>Arquivos Disponíveis</h3>
+                    <div class="filters">
+                        <select class="form-control neon-input form-control--sm" id="typeFilter">
+                            <option value="">Todos os tipos</option>
+                            <option value="frontend">Frontend</option>
+                            <option value="backend">Backend</option>
+                            <option value="fullstack">Full Stack</option>
+                            <option value="css">CSS/Styling</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="files-grid" id="filesGrid">
+                    <!-- Arquivos serão carregados dinamicamente -->
+                </div>
+                <div class="empty-state hidden" id="emptyState">
+                    <div class="empty-icon">📁</div>
+                    <h4>Nenhum arquivo encontrado</h4>
+                    <p>Não há arquivos disponíveis no momento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmação de Email -->
+    <div class="modal hidden" id="emailModal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3>🎉 Registro Realizado!</h3>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">✅</div>
+                <p class="text-white"><strong>Parabéns!</strong> Sua conta foi criada com sucesso.</p>
+                <p class="text-white" id="emailStatusText">Email de confirmação enviado via SendPulse para:</p>
+                <p><strong id="registeredEmail" style="color: #8b5cf6;"></strong></p>
+                
+                <div class="email-preview glass-panel">
+                    <h4>📧 Email de Boas-vindas via SendPulse:</h4>
+                    <div class="email-content">
+                        <p><strong>De:</strong> ARCHIVEs &lt;noreply@archives.com&gt;</p>
+                        <p><strong>Para:</strong> <span id="emailRecipient"></span></p>
+                        <p><strong>Assunto:</strong> Bem-vindo ao ARCHIVEs Ultra Dark! 🚀</p>
+                        <div class="email-body">
+                            <h3 style="color: #8b5cf6;">Olá <span id="emailUsername"></span>!</h3>
+                            <p>Bem-vindo ao ARCHIVEs Ultra Dark! Sua conta foi criada com sucesso e está pronta para uso.</p>
+                            <p>Faça login para acessar nosso repositório de arquivos premium.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="email-delivery-status glass-panel" id="emailDeliveryStatus">
+                    <div class="status-icon">📧</div>
+                    <p id="deliveryStatusText">Status: Processando via SendPulse...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--primary btn--glow" id="closeEmailModal">Continuar para Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay hidden" id="loadingOverlay">
+        <div class="loading-spinner neon-spinner"></div>
+        <p class="loading-text">Carregando...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
