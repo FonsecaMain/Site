@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Andreia, estudante de nutrição especializada em emagrecimento saudável baseado em evidências científicas">
+    <title>NutriDri - Andreia Nutricionista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
+        <div class="nav-container">
+            <h2 class="logo">NutriDri</h2>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="#inicio" class="nav-link active" role="menuitem" aria-current="page">Início</a></li>
+                <li role="none"><a href="#sobre" class="nav-link" role="menuitem">Sobre</a></li>
+                <li role="none"><a href="#servicos" class="nav-link" role="menuitem">Serviços</a></li>
+                <li role="none"><a href="#calculadora" class="nav-link" role="menuitem">Calculadora IMC</a></li>
+                <li role="none"><a href="#blog" class="nav-link" role="menuitem">Blog</a></li>
+                <li role="none"><a href="#depoimentos" class="nav-link" role="menuitem">Depoimentos</a></li>
+                <li role="none"><a href="#faq" class="nav-link" role="menuitem">FAQ</a></li>
+                <li role="none"><a href="#portfolio" class="nav-link" role="menuitem">Portfólio</a></li>
+                <li role="none"><a href="#recursos" class="nav-link" role="menuitem">Recursos</a></li>
+                <li role="none"><a href="#contato" class="nav-link" role="menuitem">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-container" id="main-content">
+        <!-- 1. INÍCIO -->
+        <section id="inicio" class="section hero-section" aria-label="Página inicial">
+            <div class="container">
+                <div class="hero">
+                    <div class="photo-container">
+                        <img src="img/img-foto-inicio.jpg" alt="Foto da Andreia" width="200" height="200">
+                    </div>
+                    <div class="text-content">
+                        <h1>NutriDri</h1>
+                        <h2>Andreia</h2>
+                        <p class="tagline">Estudante de Nutrição</p>
+                        <p class="description">Emagrecimento saudável baseado em evidências científicas</p>
+                        <a href="#contato" class="btn" role="button">Entre em Contato</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SOBRE -->
+        <section id="sobre" class="section" aria-label="Sobre Andreia">
+            <div class="container">
+                <h2 class="section-title">Sobre a Andreia</h2>
+                <div class="about-content">
+                    <p>Andreia é <strong>estudante de nutrição em formação</strong>, apaixonada por promover saúde através de alimentação baseada em evidências científicas.</p>
+                    <p>Está se especializando em <strong>emagrecimento saudável</strong> e sempre atualizada com as pesquisas mais recentes da área.</p>
+                    <p>Sua missão é ajudar pessoas a transformarem sua relação com a comida, proporcionando bem-estar através de orientações fundamentadas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SERVIÇOS -->
+        <section id="servicos" class="section section-alt" aria-label="Serviços oferecidos">
+            <div class="container">
+                <h2 class="section-title">Serviços</h2>
+                <div class="services-grid" role="list">
+                    <article class="service-card" role="listitem">
+                        <h3>Orientação Nutricional</h3>
+                        <p>Orientações baseadas em evidências científicas</p>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <h3>Emagrecimento Saudável</h3>
+                        <p>Estratégias para perda de peso sustentável</p>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <h3>Educação Nutricional</h3>
+                        <p>Ensino sobre alimentação saudável</p>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <h3>Acompanhamento</h3>
+                        <p>Suporte durante formação acadêmica</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CALCULADORA IMC -->
+        <section id="calculadora" class="section" aria-label="Calculadora de IMC">
+            <div class="container">
+                <h2 class="section-title">Calculadora de IMC</h2>
+                <div class="calculator">
+                    <form class="calculator-form" onsubmit="calcularIMC(event)">
+                        <div class="form-group">
+                            <label for="peso">Peso (kg):</label>
+                            <input type="number" id="peso" name="peso" placeholder="Ex: 70" min="1" max="500" step="0.1" required aria-describedby="peso-help">
+                            <small id="peso-help" class="help-text">Digite seu peso em quilogramas</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="altura">Altura (m):</label>
+                            <input type="number" id="altura" name="altura" placeholder="Ex: 1.70" min="0.5" max="2.5" step="0.01" required aria-describedby="altura-help">
+                            <small id="altura-help" class="help-text">Digite sua altura em metros</small>
+                        </div>
+                        <button type="submit" class="btn">Calcular IMC</button>
+                    </form>
+                    <div id="resultado" class="result-container" role="region" aria-label="Resultado do IMC">
+                        <p>Preencha os campos acima para calcular seu IMC</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. BLOG -->
+        <section id="blog" class="section section-alt" aria-label="Blog com dicas de nutrição">
+            <div class="container">
+                <h2 class="section-title">Blog - Dicas de Nutrição</h2>
+                <div class="blog-posts" role="list">
+                    <article class="post" role="listitem">
+                        <h3>Emagrecimento Saudável</h3>
+                        <p>Para emagrecer de forma saudável, priorize alimentos ricos em fibras como frutas, vegetais e cereais integrais. Consuma proteínas magras em todas as refeições e inclua gorduras boas como azeite e nozes.</p>
+                        <footer><small>Baseado em estudos científicos sobre nutrição</small></footer>
+                    </article>
+                    
+                    <article class="post" role="listitem">
+                        <h3>Nutrição Baseada em Evidências</h3>
+                        <p>A nutrição baseada em evidências integra dados científicos atualizados, experiência clínica e preferências do paciente. Esta abordagem garante recomendações fundamentadas em pesquisas.</p>
+                        <footer><small>Princípios da medicina baseada em evidências</small></footer>
+                    </article>
+                    
+                    <article class="post" role="listitem">
+                        <h3>Alimentação Equilibrada</h3>
+                        <p>Uma alimentação saudável baseia-se em variedade, moderação e equilíbrio. Consuma pelo menos 400g de frutas e vegetais por dia, prefira cereais integrais e mantenha-se hidratado.</p>
+                        <footer><small>Diretrizes da OMS sobre alimentação</small></footer>
+                    </article>
+                    
+                    <article class="post" role="listitem">
+                        <h3>Mitos e Verdades</h3>
+                        <p><strong>VERDADE:</strong> Não pular refeições mantém o metabolismo ativo. <strong>VERDADE:</strong> Arroz com feijão é uma proteína completa. <strong>MITO:</strong> Eliminar carboidratos completamente.</p>
+                        <footer><small>Revisão de estudos sobre alimentação</small></footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. DEPOIMENTOS -->
+        <section id="depoimentos" class="section" aria-label="Depoimentos de clientes">
+            <div class="container">
+                <h2 class="section-title">Depoimentos</h2>
+                <div class="testimonials" role="list">
+                    <article class="testimonial" role="listitem">
+                        <blockquote>
+                            <p>"A Andreia me ajudou muito com orientações baseadas em estudos gerais. Aprendi sobre alimentação saudável de verdade!"</p>
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <h4>Maria</h4>
+                        </footer>
+                    </article>
+                    
+                    <article class="testimonial" role="listitem">
+                        <blockquote>
+                            <p>"Mesmo sendo estudante, ela demonstra muito conhecimento e sempre explica com base nos estudos verdadeiros."</p>
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <h4>João</h4>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section id="faq" class="section section-alt" aria-label="Perguntas frequentes">
+            <div class="container">
+                <h2 class="section-title">Perguntas Frequentes</h2>
+                <div class="faq-content">
+                    <div class="faq-item">
+                        <h3>Como funciona a consulta?</h3>
+                        <p>A primeira consulta é uma avaliação completa onde analisamos seu histórico de saúde, hábitos alimentares e objetivos. A partir disso, elaboro um plano nutricional personalizado baseado em evidências científicas.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Qual é o tempo de tratamento?</h3>
+                        <p>O tempo varia conforme o objetivo de cada pessoa. Geralmente, para ver resultados significativos, recomendamos um acompanhamento de 3 a 6 meses, com consultas periódicas.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Vocês oferecem planos online?</h3>
+                        <p>Sim! Oferecemos consultas e acompanhamento totalmente online, com flexibilidade de horários e comunicação contínua via WhatsApp ou email.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Como funciona a Calculadora de IMC?</h3>
+                        <p>A Calculadora de IMC usa a fórmula científica: Peso (kg) / Altura (m)². O resultado classifica sua categoria de peso e fornece recomendações personalizadas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. PORTFÓLIO -->
+        <section id="portfolio" class="section" aria-label="Portfólio de casos">
+            <div class="container">
+                <h2 class="section-title">Portfólio de Casos</h2>
+                <div class="portfolio-grid" role="list">
+                    <article class="portfolio-item" role="listitem">
+                        <h3>Caso 1: Emagrecimento Sustentável</h3>
+                        <p><strong>Resultado:</strong> Cliente perdeu 8kg em 4 meses com acompanhamento nutricional. Manteve uma alimentação equilibrada e saudável.</p>
+                    </article>
+                    <article class="portfolio-item" role="listitem">
+                        <h3>Caso 2: Reequilíbrio Alimentar</h3>
+                        <p><strong>Resultado:</strong> Paciente reorganizou seus hábitos alimentares, melhorou energia e bem-estar geral em 2 meses.</p>
+                    </article>
+                    <article class="portfolio-item" role="listitem">
+                        <h3>Caso 3: Nutrição para Atletas</h3>
+                        <p><strong>Resultado:</strong> Atleta amador otimizou sua nutrição para melhor desempenho e recuperação muscular.</p>
+                    </article>
+                    <article class="portfolio-item" role="listitem">
+                        <h3>Caso 4: Gestão de Peso</h3>
+                        <p><strong>Resultado:</strong> Cliente conquistou seu peso ideal e aprendeu a mantê-lo com estratégias comportamentais.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. RECURSOS -->
+        <section id="recursos" class="section section-alt" aria-label="Recursos educativos">
+            <div class="container">
+                <h2 class="section-title">Recursos Educativos</h2>
+                <div class="recursos-content">
+                    <div class="recurso-item">
+                        <h3>📊 Tabela Nutricional</h3>
+                        <p>Acesso a tabela completa de alimentos com valores calóricos, proteínas, carboidratos e gorduras para orientar suas escolhas.</p>
+                    </div>
+                    <div class="recurso-item">
+                        <h3>📝 Plano de Refeições</h3>
+                        <p>Modelos de planos semanais equilibrados que você pode adaptar conforme suas preferências e rotina.</p>
+                    </div>
+                    <div class="recurso-item">
+                        <h3>📚 Artigos Científicos</h3>
+                        <p>Compilação de estudos científicos recentes sobre nutrição, saúde e bem-estar baseados em evidências.</p>
+                    </div>
+                    <div class="recurso-item">
+                        <h3>🎥 Vídeos Educativos</h3>
+                        <p>Série de vídeos sobre tópicos importantes: como ler rótulos, alimentos funcionais, receitas saudáveis e mais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CONTATO -->
+        <section id="contato" class="section" aria-label="Informações de contato">
+            <div class="container">
+                <h2 class="section-title">Entre em Contato</h2>
+                <div class="contact-content">
+                    <div class="contact-info" role="list">
+                        <div class="contact-details" role="listitem">
+                            <div class="contact-item">
+                                <h4>📱 WhatsApp</h4>
+                                <p><a href="https://wa.me/5511977801549" target="_blank" rel="noopener noreferrer">(11) 97780-1549</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-details" role="listitem">
+                            <div class="contact-item">
+                                <h4>📸 Instagram</h4>
+                                <p><a href="https://www.instagram.com/p/DQc2DnmDd2x/?igsh=MWJtMW10OHV6dXdrOA%3D%3D" target="_blank" rel="noopener noreferrer">@nutridri_andreia</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-details" role="listitem">
+                            <div class="contact-item">
+                                <h4>📧 E-mail</h4>
+                                <p><a href="mailto:contato@nutridri.com.br">Deia.bossan@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" onsubmit="enviarFormulario(event)">
+                        <div class="form-success" id="form-success">
+                            ✅ Mensagem enviada com sucesso! Entraremos em contato em breve.
+                        </div>
+                        <fieldset>
+                            <legend class="sr-only">Formulário de contato</legend>
+                            <div class="form-group">
+                                <label for="nome">Nome completo:</label>
+                                <input type="text" id="nome" name="nome" required aria-describedby="nome-help">
+                                <small id="nome-help" class="help-text">Digite seu nome completo</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail:</label>
+                                <input type="email" id="email" name="email" required aria-describedby="email-help">
+                                <small id="email-help" class="help-text">Digite um e-mail válido</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefone">Telefone (opcional):</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(11) 9XXXX-XXXX" aria-describedby="telefone-help">
+                                <small id="telefone-help" class="help-text">Seu telefone para contato</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem:</label>
+                                <textarea id="mensagem" name="mensagem" rows="5" required aria-describedby="mensagem-help" placeholder="Conte-nos sobre seus objetivos de saúde..."></textarea>
+                                <small id="mensagem-help" class="help-text">Descreva como posso ajudar você</small>
+                            </div>
+                            <button type="submit" class="btn">Enviar Mensagem</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 NutriDri - Andreia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+    // ====================================
+    // CALCULADORA IMC - JavaScript
+    // ====================================
+    
+    function calcularIMC(event) {
+        event.preventDefault();
+        
+        const peso = parseFloat(document.getElementById('peso').value);
+        const altura = parseFloat(document.getElementById('altura').value);
+        const resultado = document.getElementById('resultado');
+        
+        if (!peso || !altura || peso <= 0 || altura <= 0) {
+            resultado.innerHTML = '<p style="color: #c62828; font-weight: bold;">⚠️ Preencha todos os campos corretamente!</p>';
+            return;
+        }
+        
+        const imc = (peso / (altura * altura)).toFixed(2);
+        let categoria = '';
+        let cor = '';
+        let recomendacao = '';
+        
+        if (imc < 18.5) {
+            categoria = 'Abaixo do peso';
+            cor = '#1976d2';
+            recomendacao = 'Considere uma avaliação com nutricionista para ganho saudável.';
+        }
+        else if (imc < 25) {
+            categoria = 'Peso normal';
+            cor = '#388e3c';
+            recomendacao = 'Parabéns! Mantenha seus hábitos saudáveis!';
+        }
+        else if (imc < 30) {
+            categoria = 'Sobrepeso';
+            cor = '#f57c00';
+            recomendacao = 'Considere atividade física regular e alimentação equilibrada.';
+        }
+        else if (imc < 35) {
+            categoria = 'Obesidade Grau I';
+            cor = '#d32f2f';
+            recomendacao = 'Recomendamos acompanhamento profissional.';
+        }
+        else if (imc < 40) {
+            categoria = 'Obesidade Grau II';
+            cor = '#b71c1c';
+            recomendacao = 'Procure um profissional de saúde urgentemente.';
+        }
+        else {
+            categoria = 'Obesidade Grau III';
+            cor = '#7f0000';
+            recomendacao = 'Procure orientação profissional imediatamente.';
+        }
+        
+        resultado.innerHTML = '<div style="text-align: center;"><h3 style="color: ' + cor + '; margin-bottom: 0.5rem;">IMC: <strong>' + imc + '</strong></h3><p style="font-size: 1.05rem; font-weight: 600; color: ' + cor + ';">' + categoria + '</p><p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">' + recomendacao + '</p></div>';
+    }
+    
+    // ====================================
+    // FORMULÁRIO DE CONTATO - SEM BACKEND
+    // ====================================
+    
+    function enviarFormulario(event) {
+        event.preventDefault();
+        
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
+        
+        // Validação básica
+        if (!nome || !email || !mensagem) {
+            alert('⚠️ Por favor, preencha todos os campos obrigatórios!');
+            return;
+        }
+        
+        // Formatar dados para WhatsApp
+        const dataAtual = new Date().toLocaleDateString('pt-BR');
+        const horaAtual = new Date().toLocaleTimeString('pt-BR');
+        
+        const textoWhatsapp = `*Novo Contato NutriDri*%0A%0A*Nome:* ${encodeURIComponent(nome)}%0A*E-mail:* ${encodeURIComponent(email)}%0A*Telefone:* ${encodeURIComponent(telefone || 'Não informado')}%0A*Data:* ${dataAtual}%0A*Hora:* ${horaAtual}%0A%0A*Mensagem:*%0A${encodeURIComponent(mensagem)}`;
+        
+        // Abrir WhatsApp com a mensagem
+        const linkWhatsapp = `https://wa.me/5511977801549?text=${textoWhatsapp}`;
+        window.open(linkWhatsapp, '_blank');
+        
+        // Mostrar mensagem de sucesso
+        const successDiv = document.getElementById('form-success');
+        successDiv.classList.add('show');
+        
+        // Limpar formulário
+        document.querySelector('.contact-form').reset();
+        
+        // Ocultar mensagem após 5 segundos
+        setTimeout(() => {
+            successDiv.classList.remove('show');
+        }, 5000);
+    }
+    
+    // ====================================
+    // SMOOTH SCROLL
+    // ====================================
+    
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+    </script>
+</body>
+</html>
